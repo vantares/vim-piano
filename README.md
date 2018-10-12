@@ -5,7 +5,7 @@ When you typing in insertion mode, vim-piano play piano sound
 
 ## Installation
 
-It works only on [MacVim](http://macvim-dev.github.io/macvim/).
+I try to port this plugin for linux usage
 
 If you don't have a preferred installation method, one option is to install
 [pathogen.vim](https://github.com/tpope/vim-pathogen), and then copy
