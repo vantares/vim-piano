@@ -2,7 +2,7 @@
 let s:dir = expand('<sfile>:p:h')
 function! PlaySound()
   py import random, vim; vim.command("let number = " + str(random.randint(1, 9)))
-  let play = join(["!afplay ", "/../assets/cmj/"], s:dir)
+  let play = join(["!mplayer -really-quiet ", "/../assets/cmj/"], s:dir)
   let play = join([play, ".aiff &"], number)
   silent! exec play
 endfunction
@@ -10,7 +10,7 @@ endfunction
 let g:togglePiano = 0
 function! TogglePiano()
   let g:togglePiano = 1 - g:togglePiano
-  if g:togglePiano == 1 && has("gui_macvim")
+  if g:togglePiano == 1
     augroup Piano
       autocmd!
       autocmd CursorMovedI * call PlaySound()
